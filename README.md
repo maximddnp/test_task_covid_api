@@ -17,6 +17,8 @@ This project uses
 
 # Executing tests
 
+#### Endpoint for SUT could be changed in `config.properties` file
+
 ### All tests
 
 #### mac or linux
