@@ -1,0 +1,174 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "array",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": [],
+  "additionalItems": true,
+  "items": {
+    "$id": "#/items",
+    "anyOf": [
+      {
+        "$id": "#/items/anyOf/0",
+        "type": "object",
+        "title": "The first anyOf schema",
+        "description": "An explanation about the purpose of this instance.",
+        "default": {},
+        "examples": [
+          {
+            "Confirmed": 2.0,
+            "CityCode": "",
+            "Recovered": 0.0,
+            "Deaths": 0.0,
+            "City": "",
+            "Date": "2020-01-24T00:00:00Z",
+            "Country": "France",
+            "Province": "",
+            "CountryCode": "FR",
+            "Active": 2.0,
+            "Lat": "46.23",
+            "Lon": "2.21"
+          }
+        ],
+        "required": [
+          "Country",
+          "CountryCode",
+          "Province",
+          "City",
+          "CityCode",
+          "Lat",
+          "Lon",
+          "Confirmed",
+          "Deaths",
+          "Recovered",
+          "Active",
+          "Date"
+        ],
+        "additionalProperties": true,
+        "properties": {
+          "Country": {
+            "$id": "#/items/anyOf/0/properties/Country",
+            "type": "string",
+            "title": "The Country schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "France"
+            ]
+          },
+          "CountryCode": {
+            "$id": "#/items/anyOf/0/properties/CountryCode",
+            "type": "string",
+            "title": "The CountryCode schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "FR"
+            ]
+          },
+          "Province": {
+            "$id": "#/items/anyOf/0/properties/Province",
+            "type": "string",
+            "title": "The Province schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              ""
+            ]
+          },
+          "City": {
+            "$id": "#/items/anyOf/0/properties/City",
+            "type": "string",
+            "title": "The City schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              ""
+            ]
+          },
+          "CityCode": {
+            "$id": "#/items/anyOf/0/properties/CityCode",
+            "type": "string",
+            "title": "The CityCode schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              ""
+            ]
+          },
+          "Lat": {
+            "$id": "#/items/anyOf/0/properties/Lat",
+            "type": "string",
+            "title": "The Lat schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "46.23"
+            ]
+          },
+          "Lon": {
+            "$id": "#/items/anyOf/0/properties/Lon",
+            "type": "string",
+            "title": "The Lon schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "2.21"
+            ]
+          },
+          "Confirmed": {
+            "$id": "#/items/anyOf/0/properties/Confirmed",
+            "type": "integer",
+            "title": "The Confirmed schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+              2.0
+            ]
+          },
+          "Deaths": {
+            "$id": "#/items/anyOf/0/properties/Deaths",
+            "type": "integer",
+            "title": "The Deaths schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+              0.0
+            ]
+          },
+          "Recovered": {
+            "$id": "#/items/anyOf/0/properties/Recovered",
+            "type": "integer",
+            "title": "The Recovered schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+              0.0
+            ]
+          },
+          "Active": {
+            "$id": "#/items/anyOf/0/properties/Active",
+            "type": "integer",
+            "title": "The Active schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": 0,
+            "examples": [
+              2.0
+            ]
+          },
+          "Date": {
+            "$id": "#/items/anyOf/0/properties/Date",
+            "type": "string",
+            "title": "The Date schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "2020-01-24T00:00:00Z"
+            ]
+          }
+        }
+      }
+    ]
+  }
+}

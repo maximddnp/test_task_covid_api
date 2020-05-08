@@ -1,0 +1,702 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "List all the current routes available with detail on each.",
+  "default": {},
+  "required": [
+    "allRoute",
+    "countriesRoute",
+    "countryStatusDayOneLiveRoute",
+    "countryStatusDayOneRoute",
+    "countryStatusDayOneTotalRoute",
+    "countryStatusLiveRoute",
+    "countryStatusRoute",
+    "countryStatusTotalRoute",
+    "exportRoute",
+    "liveCountryStatusAfterDateRoute",
+    "liveCountryStatusRoute",
+    "summaryRoute",
+    "webhookRoute"
+  ],
+  "additionalProperties": true,
+  "properties": {
+    "allRoute": {
+      "$id": "#/properties/allRoute",
+      "type": "object",
+      "title": "The allRoute schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "Description": "Returns all data in the system. Warning: this request returns 8MB+ and takes 5+ seconds",
+          "Name": "Get All Data",
+          "Path": "/all"
+        }
+      ],
+      "required": [
+        "Name",
+        "Description",
+        "Path"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "Name": {
+          "$id": "#/properties/allRoute/properties/Name",
+          "type": "string",
+          "title": "The Name schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Get All Data"
+          ]
+        },
+        "Description": {
+          "$id": "#/properties/allRoute/properties/Description",
+          "type": "string",
+          "title": "The Description schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Returns all data in the system. Warning: this request returns 8MB+ and takes 5+ seconds"
+          ]
+        },
+        "Path": {
+          "$id": "#/properties/allRoute/properties/Path",
+          "type": "string",
+          "title": "The Path schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "/all"
+          ]
+        }
+      }
+    },
+    "countriesRoute": {
+      "$id": "#/properties/countriesRoute",
+      "type": "object",
+      "title": "The countriesRoute schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "Description": "Returns all countries and associated provinces. The country_slug variable is used for country specific data",
+          "Name": "Get List Of Countries",
+          "Path": "/countries"
+        }
+      ],
+      "required": [
+        "Name",
+        "Description",
+        "Path"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "Name": {
+          "$id": "#/properties/countriesRoute/properties/Name",
+          "type": "string",
+          "title": "The Name schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Get List Of Countries"
+          ]
+        },
+        "Description": {
+          "$id": "#/properties/countriesRoute/properties/Description",
+          "type": "string",
+          "title": "The Description schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Returns all countries and associated provinces. The country_slug variable is used for country specific data"
+          ]
+        },
+        "Path": {
+          "$id": "#/properties/countriesRoute/properties/Path",
+          "type": "string",
+          "title": "The Path schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "/countries"
+          ]
+        }
+      }
+    },
+    "countryStatusDayOneLiveRoute": {
+      "$id": "#/properties/countryStatusDayOneLiveRoute",
+      "type": "object",
+      "title": "The countryStatusDayOneLiveRoute schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "Description": "Returns all cases by case type for a country from the first recorded case with the latest record being the live count. Country must be the country_slug from /countries. Cases must be one of: confirmed, recovered, deaths",
+          "Name": "Get List Of Cases Per Country Per Province By Case Type From The First Recorded Case With Live Count",
+          "Path": "/dayone/country/:country/status/:status/live"
+        }
+      ],
+      "required": [
+        "Name",
+        "Description",
+        "Path"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "Name": {
+          "$id": "#/properties/countryStatusDayOneLiveRoute/properties/Name",
+          "type": "string",
+          "title": "The Name schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Get List Of Cases Per Country Per Province By Case Type From The First Recorded Case With Live Count"
+          ]
+        },
+        "Description": {
+          "$id": "#/properties/countryStatusDayOneLiveRoute/properties/Description",
+          "type": "string",
+          "title": "The Description schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Returns all cases by case type for a country from the first recorded case with the latest record being the live count. Country must be the country_slug from /countries. Cases must be one of: confirmed, recovered, deaths"
+          ]
+        },
+        "Path": {
+          "$id": "#/properties/countryStatusDayOneLiveRoute/properties/Path",
+          "type": "string",
+          "title": "The Path schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "/dayone/country/:country/status/:status/live"
+          ]
+        }
+      }
+    },
+    "countryStatusDayOneRoute": {
+      "$id": "#/properties/countryStatusDayOneRoute",
+      "type": "object",
+      "title": "The countryStatusDayOneRoute schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "Description": "Returns all cases by case type for a country from the first recorded case. Country must be the country_slug from /countries. Cases must be one of: confirmed, recovered, deaths",
+          "Name": "Get List Of Cases Per Country Per Province By Case Type From The First Recorded Case",
+          "Path": "/dayone/country/:country/status/:status"
+        }
+      ],
+      "required": [
+        "Name",
+        "Description",
+        "Path"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "Name": {
+          "$id": "#/properties/countryStatusDayOneRoute/properties/Name",
+          "type": "string",
+          "title": "The Name schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Get List Of Cases Per Country Per Province By Case Type From The First Recorded Case"
+          ]
+        },
+        "Description": {
+          "$id": "#/properties/countryStatusDayOneRoute/properties/Description",
+          "type": "string",
+          "title": "The Description schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Returns all cases by case type for a country from the first recorded case. Country must be the country_slug from /countries. Cases must be one of: confirmed, recovered, deaths"
+          ]
+        },
+        "Path": {
+          "$id": "#/properties/countryStatusDayOneRoute/properties/Path",
+          "type": "string",
+          "title": "The Path schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "/dayone/country/:country/status/:status"
+          ]
+        }
+      }
+    },
+    "countryStatusDayOneTotalRoute": {
+      "$id": "#/properties/countryStatusDayOneTotalRoute",
+      "type": "object",
+      "title": "The countryStatusDayOneTotalRoute schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "Description": "Returns all cases by case type for a country from the first recorded case. Country must be the country_slug from /countries. Cases must be one of: confirmed, recovered, deaths",
+          "Name": "Get List Of Cases Per Country By Case Type From The First Recorded Case",
+          "Path": "/total/dayone/country/:country/status/:status"
+        }
+      ],
+      "required": [
+        "Name",
+        "Description",
+        "Path"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "Name": {
+          "$id": "#/properties/countryStatusDayOneTotalRoute/properties/Name",
+          "type": "string",
+          "title": "The Name schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Get List Of Cases Per Country By Case Type From The First Recorded Case"
+          ]
+        },
+        "Description": {
+          "$id": "#/properties/countryStatusDayOneTotalRoute/properties/Description",
+          "type": "string",
+          "title": "The Description schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Returns all cases by case type for a country from the first recorded case. Country must be the country_slug from /countries. Cases must be one of: confirmed, recovered, deaths"
+          ]
+        },
+        "Path": {
+          "$id": "#/properties/countryStatusDayOneTotalRoute/properties/Path",
+          "type": "string",
+          "title": "The Path schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "/total/dayone/country/:country/status/:status"
+          ]
+        }
+      }
+    },
+    "countryStatusLiveRoute": {
+      "$id": "#/properties/countryStatusLiveRoute",
+      "type": "object",
+      "title": "The countryStatusLiveRoute schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "Description": "Returns all cases by case type for a country with the latest record being the live count. Country must be the country_slug from /countries. Cases must be one of: confirmed, recovered, deaths",
+          "Name": "Get List Of Cases Per Country Per Province By Case Type With Live Count",
+          "Path": "/country/:country/status/:status/live"
+        }
+      ],
+      "required": [
+        "Name",
+        "Description",
+        "Path"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "Name": {
+          "$id": "#/properties/countryStatusLiveRoute/properties/Name",
+          "type": "string",
+          "title": "The Name schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Get List Of Cases Per Country Per Province By Case Type With Live Count"
+          ]
+        },
+        "Description": {
+          "$id": "#/properties/countryStatusLiveRoute/properties/Description",
+          "type": "string",
+          "title": "The Description schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Returns all cases by case type for a country with the latest record being the live count. Country must be the country_slug from /countries. Cases must be one of: confirmed, recovered, deaths"
+          ]
+        },
+        "Path": {
+          "$id": "#/properties/countryStatusLiveRoute/properties/Path",
+          "type": "string",
+          "title": "The Path schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "/country/:country/status/:status/live"
+          ]
+        }
+      }
+    },
+    "countryStatusRoute": {
+      "$id": "#/properties/countryStatusRoute",
+      "type": "object",
+      "title": "The countryStatusRoute schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "Description": "Returns all cases by case type for a country. Country must be the country_slug from /countries. Cases must be one of: confirmed, recovered, deaths",
+          "Name": "Get List Of Cases Per Country Per Province By Case Type",
+          "Path": "/country/:country/status/:status"
+        }
+      ],
+      "required": [
+        "Name",
+        "Description",
+        "Path"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "Name": {
+          "$id": "#/properties/countryStatusRoute/properties/Name",
+          "type": "string",
+          "title": "The Name schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Get List Of Cases Per Country Per Province By Case Type"
+          ]
+        },
+        "Description": {
+          "$id": "#/properties/countryStatusRoute/properties/Description",
+          "type": "string",
+          "title": "The Description schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Returns all cases by case type for a country. Country must be the country_slug from /countries. Cases must be one of: confirmed, recovered, deaths"
+          ]
+        },
+        "Path": {
+          "$id": "#/properties/countryStatusRoute/properties/Path",
+          "type": "string",
+          "title": "The Path schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "/country/:country/status/:status"
+          ]
+        }
+      }
+    },
+    "countryStatusTotalRoute": {
+      "$id": "#/properties/countryStatusTotalRoute",
+      "type": "object",
+      "title": "The countryStatusTotalRoute schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "Description": "Returns all cases by case type for a country. Country must be the country_slug from /countries. Cases must be one of: confirmed, recovered, deaths",
+          "Name": "Get List Of Cases Per Country By Case Type",
+          "Path": "/total/country/:country/status/:status"
+        }
+      ],
+      "required": [
+        "Name",
+        "Description",
+        "Path"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "Name": {
+          "$id": "#/properties/countryStatusTotalRoute/properties/Name",
+          "type": "string",
+          "title": "The Name schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Get List Of Cases Per Country By Case Type"
+          ]
+        },
+        "Description": {
+          "$id": "#/properties/countryStatusTotalRoute/properties/Description",
+          "type": "string",
+          "title": "The Description schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Returns all cases by case type for a country. Country must be the country_slug from /countries. Cases must be one of: confirmed, recovered, deaths"
+          ]
+        },
+        "Path": {
+          "$id": "#/properties/countryStatusTotalRoute/properties/Path",
+          "type": "string",
+          "title": "The Path schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "/total/country/:country/status/:status"
+          ]
+        }
+      }
+    },
+    "exportRoute": {
+      "$id": "#/properties/exportRoute",
+      "type": "object",
+      "title": "The exportRoute schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "Description": "Returns all data in the system, compressed as a zip file. Warning: this request returns 8MB+ and takes 5+ seconds",
+          "Name": "Get All Data as a zip file",
+          "Path": "/export"
+        }
+      ],
+      "required": [
+        "Name",
+        "Description",
+        "Path"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "Name": {
+          "$id": "#/properties/exportRoute/properties/Name",
+          "type": "string",
+          "title": "The Name schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Get All Data as a zip file"
+          ]
+        },
+        "Description": {
+          "$id": "#/properties/exportRoute/properties/Description",
+          "type": "string",
+          "title": "The Description schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Returns all data in the system, compressed as a zip file. Warning: this request returns 8MB+ and takes 5+ seconds"
+          ]
+        },
+        "Path": {
+          "$id": "#/properties/exportRoute/properties/Path",
+          "type": "string",
+          "title": "The Path schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "/export"
+          ]
+        }
+      }
+    },
+    "liveCountryStatusAfterDateRoute": {
+      "$id": "#/properties/liveCountryStatusAfterDateRoute",
+      "type": "object",
+      "title": "The liveCountryStatusAfterDateRoute schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "Description": "Returns all live cases by case type for a country after a given date. These records are pulled every 10 minutes and are ungrouped. Country must be the country_slug from /countries. Cases must be one of: confirmed, recovered, deaths",
+          "Name": "Get Live List Of Cases Per Country Per Province By Case Type After A Date",
+          "Path": "/live/country/:country/status/:status/date/:date"
+        }
+      ],
+      "required": [
+        "Name",
+        "Description",
+        "Path"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "Name": {
+          "$id": "#/properties/liveCountryStatusAfterDateRoute/properties/Name",
+          "type": "string",
+          "title": "The Name schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Get Live List Of Cases Per Country Per Province By Case Type After A Date"
+          ]
+        },
+        "Description": {
+          "$id": "#/properties/liveCountryStatusAfterDateRoute/properties/Description",
+          "type": "string",
+          "title": "The Description schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Returns all live cases by case type for a country after a given date. These records are pulled every 10 minutes and are ungrouped. Country must be the country_slug from /countries. Cases must be one of: confirmed, recovered, deaths"
+          ]
+        },
+        "Path": {
+          "$id": "#/properties/liveCountryStatusAfterDateRoute/properties/Path",
+          "type": "string",
+          "title": "The Path schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "/live/country/:country/status/:status/date/:date"
+          ]
+        }
+      }
+    },
+    "liveCountryStatusRoute": {
+      "$id": "#/properties/liveCountryStatusRoute",
+      "type": "object",
+      "title": "The liveCountryStatusRoute schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "Description": "Returns all live cases by case type for a country. These records are pulled every 10 minutes and are ungrouped. Country must be the country_slug from /countries. Cases must be one of: confirmed, recovered, deaths",
+          "Name": "Get Live List Of Cases Per Country Per Province By Case Type",
+          "Path": "/live/country/:country/status/:status"
+        }
+      ],
+      "required": [
+        "Name",
+        "Description",
+        "Path"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "Name": {
+          "$id": "#/properties/liveCountryStatusRoute/properties/Name",
+          "type": "string",
+          "title": "The Name schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Get Live List Of Cases Per Country Per Province By Case Type"
+          ]
+        },
+        "Description": {
+          "$id": "#/properties/liveCountryStatusRoute/properties/Description",
+          "type": "string",
+          "title": "The Description schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Returns all live cases by case type for a country. These records are pulled every 10 minutes and are ungrouped. Country must be the country_slug from /countries. Cases must be one of: confirmed, recovered, deaths"
+          ]
+        },
+        "Path": {
+          "$id": "#/properties/liveCountryStatusRoute/properties/Path",
+          "type": "string",
+          "title": "The Path schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "/live/country/:country/status/:status"
+          ]
+        }
+      }
+    },
+    "summaryRoute": {
+      "$id": "#/properties/summaryRoute",
+      "type": "object",
+      "title": "The summaryRoute schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "Description": "A summary of new and total cases per country",
+          "Name": "Summary of new and total cases per country",
+          "Path": "/summary"
+        }
+      ],
+      "required": [
+        "Name",
+        "Description",
+        "Path"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "Name": {
+          "$id": "#/properties/summaryRoute/properties/Name",
+          "type": "string",
+          "title": "The Name schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Summary of new and total cases per country"
+          ]
+        },
+        "Description": {
+          "$id": "#/properties/summaryRoute/properties/Description",
+          "type": "string",
+          "title": "The Description schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "A summary of new and total cases per country"
+          ]
+        },
+        "Path": {
+          "$id": "#/properties/summaryRoute/properties/Path",
+          "type": "string",
+          "title": "The Path schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "/summary"
+          ]
+        }
+      }
+    },
+    "webhookRoute": {
+      "$id": "#/properties/webhookRoute",
+      "type": "object",
+      "title": "The webhookRoute schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": {},
+      "examples": [
+        {
+          "Description": "POST Request must be in JSON format with key URL and the value of the webhook. Response data is the same as returned from /summary",
+          "Name": "Add a webhook to be notified when new data becomes available",
+          "Path": "/webhook"
+        }
+      ],
+      "required": [
+        "Name",
+        "Description",
+        "Path"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "Name": {
+          "$id": "#/properties/webhookRoute/properties/Name",
+          "type": "string",
+          "title": "The Name schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "Add a webhook to be notified when new data becomes available"
+          ]
+        },
+        "Description": {
+          "$id": "#/properties/webhookRoute/properties/Description",
+          "type": "string",
+          "title": "The Description schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "POST Request must be in JSON format with key URL and the value of the webhook. Response data is the same as returned from /summary"
+          ]
+        },
+        "Path": {
+          "$id": "#/properties/webhookRoute/properties/Path",
+          "type": "string",
+          "title": "The Path schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": "",
+          "examples": [
+            "/webhook"
+          ]
+        }
+      }
+    }
+  }
+}
