@@ -1,0 +1,42 @@
+plugins {
+    id 'java'
+}
+
+group 'org.test.covid_api'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    junitJupiterVersion  = '5.6.2'
+    karateVersion  = '0.9.5'
+}
+
+dependencies {
+    testImplementation "org.junit.jupiter:junit-jupiter:$junitJupiterVersion"
+    testImplementation "com.intuit.karate:karate-junit5:$karateVersion"
+    testImplementation "com.intuit.karate:karate-apache:$karateVersion"
+    testImplementation "org.assertj:assertj-core:3.16.0"
+    testImplementation "net.masterthought:cucumber-reporting:5.2.2"
+}
+
+sourceSets {
+    test {
+        resources {
+            srcDir file('src/test/java')
+            exclude '**/*.java'
+        }
+    }
+}
+
+test {
+    systemProperty "karate.options", System.properties.getProperty("karate.options")
+    systemProperty "karate.env", System.properties.getProperty("karate.env")
+    useJUnitPlatform()
+    testLogging {
+        events "passed", "skipped", "failed"
+    }
+    outputs.upToDateWhen { false }
+}

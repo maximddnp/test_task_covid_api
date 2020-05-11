@@ -1,2 +1,3 @@
 rootProject.name = 'test_task_covid_api'
+include 'karate_example'
 
